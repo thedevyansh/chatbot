@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CHATBOT</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+  </script>
+
+  <style>
+
+  	body {
+  background-color: #50514f;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  border: 3px solid #fff;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  background-color: #182640;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+#result {
+  font-size: 30px;
+  color: #fff;
+}
+
+#ans {
+  color: #ffffff;
+  padding: 15px;
+  margin: 30px;
+  font-size: 20px;
+  background: transparent;
+  border: 0;
+  text-align: center;  
+}
+
+#submitButton {
+     margin: 25px;
+     background: transparent;
+     border: 0;
+     padding:12px 40px;
+     border: 2px solid white;
+     border-radius: 40px;
+     color: white;
+     font-family: 'Open Sans',sans serif;
+     font-size: 14px;
+     transition: 0.25s;
+     cursor: pointer;
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+	<div class="flex">
+  
+    <h1>Crime Registration Portal</h1>
+  
+  <div id="result">   </div>
+
+  <form action="">
+
+  <input type="text" id="ans" placeholder="Enter your response" required/>
+  
+  <input type="submit" id="submitButton" value="SUBMIT" style="display:none;">
+
+</form>
+ 
+
+</div>
+
+ <script>
+
+var questions = [
+    'What\'s your name ?',
+    'Where are you from ?',
+    'What\'s your age ?',
+    'What crime did you experienced ?',
+    'Where did the crime happen ?',
+    'Your contact no ?',
+    'Don\'t worry! We\'ll look into it.'
+];
+var num = 0;
+
+var inputBox = document.querySelector('#ans');
+var output = document.querySelector('#result');
+var reveal = document.querySelector('#submitButton');
+output.innerHTML = questions[num];
+
+function showResponse() {
+  var input = inputBox.value;
+  if(inputBox.value == "") {
+    
+  }else {
+  if(num == 0) {
+    output.innerHTML = questions[num];
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "Please wait");
+    ++num;
+    setTimeout(changeQuestion,500);
+  } else if(num == 1) {
+    output.innerHTML = questions[num];
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "Please wait");
+    ++num;
+    setTimeout(changeQuestion, 500);
+  } else if(num == 2) {
+    output.innerHTML = questions[num];
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "Please wait");
+    ++num;
+    setTimeout(changeQuestion, 500);
+  } else if(num == 3) {
+    output.innerHTML = questions[num];
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "Please wait");
+    ++num;
+    setTimeout(changeQuestion, 500);
+  } else if(num == 4) {
+    output.innerHTML = questions[num];
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "Please wait");
+    ++num;
+    setTimeout(changeQuestion, 500);
+  } else if(num == 5) {
+    output.innerHTML = questions[num];
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "Please wait");
+    ++num;
+    setTimeout(changeQuestion, 1000);
+  }
+   }
+}
+
+function changeQuestion() {
+  inputBox.setAttribute("placeholder", "Enter your response");
+  output.innerHTML = questions[num];
+  if(num == 6) {
+    inputBox.style.display = "none";
+    reveal.style.display = "block";
+  }
+}
+
+$(document).on('keypress', function(e) {
+  if(e.which == 13) {
+    showResponse();
+  }
+})
+
+</script>
+
+</body>
+</html>
